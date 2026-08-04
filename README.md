@@ -129,7 +129,6 @@ mistyped URL. It matches the site template and points visitors to the main pages
 footer changes, update this file along with the other five.
 
 ## Accessibility checklist (please keep this — it's our lab's own site)
-![IMPORTANT]
 The site currently meets these standards. When adding content, keep them true:
 
 **Every image gets real alt text.** Describe what's in the photo ("Abhinaya Guduru
