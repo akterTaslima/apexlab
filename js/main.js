@@ -10,6 +10,38 @@ document.addEventListener("DOMContentLoaded", function () {
     GLightbox({ selector: ".glightbox" });
   }
 
+  // 2b) Carousel pause/play control (only runs on the homepage)
+  var carouselEl = document.getElementById("heroCarousel");
+  var pauseToggle = document.getElementById("carouselPauseToggle");
+  if (carouselEl && pauseToggle && window.bootstrap) {
+    var carousel = bootstrap.Carousel.getOrCreateInstance(carouselEl);
+    var pauseIcon = pauseToggle.querySelector(".icon-pause");
+    var playIcon = pauseToggle.querySelector(".icon-play");
+
+    // If the user's system prefers reduced motion, start paused rather
+    // than auto-advancing and making them find the button first.
+    var isPlaying = !(window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    if (!isPlaying) carousel.pause();
+
+    var updateButton = function () {
+      pauseToggle.setAttribute("aria-label", isPlaying ? "Pause carousel" : "Play carousel");
+      pauseIcon.style.display = isPlaying ? "" : "none";
+      playIcon.style.display = isPlaying ? "none" : "";
+    };
+    updateButton();
+
+    pauseToggle.addEventListener("click", function () {
+      if (isPlaying) {
+        carousel.pause();
+      } else {
+        carousel.cycle();
+      }
+      isPlaying = !isPlaying;
+      updateButton();
+    });
+  }
+
   // 3) Sidebar: highlight the link for the section currently on screen
   //    (runs on any page that has a .side-nav — People and Research)
   var sideNav = document.querySelector(".side-nav");
@@ -31,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // Edge case: if we're at (or near) the bottom of the page, the last
       // section may be too short to ever reach the trigger line — select it.
       var nearBottom =
-        window.innerHeight + window.scrollY >=
-        document.documentElement.scrollHeight - 5;
+          window.innerHeight + window.scrollY >=
+          document.documentElement.scrollHeight - 5;
       if (nearBottom) currentIndex = sections.length - 1;
 
       links.forEach(function (link, i) {

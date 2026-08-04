@@ -25,223 +25,235 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
+<a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ================= HEADER ================= -->
-  <!-- ================= BANNER =================
-       To change the banner, replace images/cover-1.png (keep it wide,
-       roughly 3.5:1). The alt text below is what screen readers announce. -->
-  <header class="site-header">
-    <h1>
-      <a href="index.html">
-        <img class="banner" src="images/cover-1.png"
-             alt="Accessibility and Privacy Enhancing EXperience (APEX) Lab — University of Texas at San Antonio">
+<!-- ================= HEADER ================= -->
+<!-- ================= BANNER =================
+     To change the banner, replace images/cover-1.png (keep it wide,
+     roughly 3.5:1). The alt text below is what screen readers announce. -->
+<header class="site-header">
+  <h1>
+    <a href="index.html">
+      <img class="banner" src="images/cover-1.png"
+           alt="Accessibility and Privacy Enhancing EXperience (APEX) Lab — University of Texas at San Antonio">
+    </a>
+  </h1>
+</header>
+
+<!-- ================= NAVBAR =================
+     To mark the current page, move class="active" to that link. -->
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <ul>
+      <li><a class="active" href="index.html" aria-current="page">Home</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main" class="page">
+
+  <!-- ================= PHOTO CAROUSEL =================
+       To add a slide: copy one <div class="carousel-item"> block.
+       Landscape photos (wider than tall) look best here. -->
+  <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="6000">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="images/apex_lab_team.jpg" alt="APEX Lab team group photo">
+        <div class="carousel-caption">
+          <h2>Welcome to the Accessibility and Privacy Enhancing EXperience (APEX) Lab</h2>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img loading="lazy" src="images/sp1_campus.jpg" alt="UTSA main building">
+        <div class="carousel-caption">
+          <h2>UT San Antonio Campus</h2>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img loading="lazy" src="images/apexlab_member-1.jpeg" alt="APEX Lab graduate students">
+        <div class="carousel-caption">
+          <h2>Graduate Students</h2>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img loading="lazy" src="images/apexlab_member_2.jpg" alt="APEX Lab graduate students">
+        <div class="carousel-caption">
+          <h2>Graduate Students</h2>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img loading="lazy" src="images/apexlab_member_3.jpg" alt="APEX Lab graduate students" style="object-position: top;">
+        <div class="carousel-caption">
+          <h2>Graduate Students</h2>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous slide</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next slide</span>
+    </button>
+
+    <!-- Pause/play control (required: auto-advancing content must be
+         user-pausable — WCAG 2.2.2). Icons swap via main.js. -->
+    <button class="carousel-control-pause" type="button" id="carouselPauseToggle" aria-label="Pause carousel">
+      <svg class="icon-pause" viewBox="0 0 16 16" aria-hidden="true">
+        <rect x="3" y="2" width="3.2" height="12"></rect>
+        <rect x="9.8" y="2" width="3.2" height="12"></rect>
+      </svg>
+      <svg class="icon-play" viewBox="0 0 16 16" aria-hidden="true" style="display:none;">
+        <polygon points="4,2 14,8 4,14"></polygon>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ================= INTRO ================= -->
+  <p>
+    The <b>A</b>ccessibility and <b>P</b>rivacy Enhancing <b>EX</b>perience (<b>APEX</b>) Lab is led by
+    <b>Dr. Taslima Akter</b> in the College of AI, Cyber, and Computing at the
+    <b>University of Texas at San Antonio</b>.
+    Our research focuses on advancing privacy and accessibility for marginalized populations, with a
+    particular focus on people with disabilities. To learn more about our work, explore our recent
+    <a href="publications.html">publications</a>. Visit the <a href="people.html">People</a> page to meet
+    the team driving our research forward.
+  </p>
+
+  <!-- ================= RECENT NEWS =================
+       To add a news item: copy one <div class="col-lg-4"> block below.
+       Newest items go first. If the image is a screenshot or figure with
+       text on it, add class="fit-contain" to the <img> so it isn't cropped. -->
+  <div class="text-center">
+    <h2 class="section-title">Recent News</h2>
+  </div>
+
+  <div class="row g-4 align-items-stretch">
+
+    <div class="col-lg-4 col-md-6">
+      <div class="news-card">
+        <span class="date">May 19, 2026</span>
+        <h3>Paper accepted at SOUPS 2026</h3>
+        <img loading="lazy" src="images/soups-2026-paper-accepted-placeholder.jpg"
+             alt="Paper accepted graphic: SOUPS 2026">
+        <p>Sohana Akter and Dr.Taslima Akter's  paper <b>"I feel as though my privacy is being violated": Privacy Risks and Barriers in
+          Instant Messaging for Blind and Low-Vision Users</b> has been accepted to appear at the
+          Symposium On Usable Privacy and Security (<b>SOUPS 2026</b>) in Hannover, Germany.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="news-card">
+        <span class="date">March 2026</span>
+        <h3><a href="https://cra.org/crn/2026/03/cra-trustworthy-ai-research-fellow-spotlight-taslima-akter/" target="_blank" rel="noopener">
+          Dr. Akter featured in CRA Trustworthy AI Research Fellow Spotlight<span class="visually-hidden"> (opens in new tab)</span></a></h3>
+        <img loading="lazy" src="images/Headshot-Taslima-Akter-wide.jpg"
+             alt="Portrait of Dr. Taslima Akter">
+        <p>Dr. Akter was featured in CRA's Fellow Spotlight Series, discussing her research
+          on privacy and accessibility for blind and low-vision users and how to build
+          trustworthy and socially responsible AI.
+          <a href="https://cra.org/crn/2026/03/cra-trustworthy-ai-research-fellow-spotlight-taslima-akter/" target="_blank" rel="noopener">Read the full spotlight<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="news-card">
+        <span class="date">February 24, 2026</span>
+        <h3>Sohana Akter presented her research on privacy risk and barriers in instant messaging applications among blind and low vision people at NSF AI Spring School 2026.</h3>
+        <img loading="lazy" src="images/sohana_poster_matrix.jpeg" alt="Sohana presenting poster">
+        <p><a href="https://ai.utsa.edu/ai-spring-school-2026/" target="_blank" rel="noopener">Read the details of NSF AI Spring School 2026<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="news-card">
+        <span class="date">February 24, 2026</span>
+        <h3>Protik Dey and Mohd. Saifuzzaman presented their research on trustworthy GenAI use among blind and low vision people at NSF AI Spring School 2026.</h3>
+        <img loading="lazy" src="images/protik_saif_poster_matrix.jpg" alt="Protik and Saif presenting poster">
+        <p><a href="https://ai.utsa.edu/ai-spring-school-2026/" target="_blank" rel="noopener">Read the details of NSF AI Spring School 2026<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+      <div class="news-card">
+        <span class="date">July 15, 2025</span>
+        <h3><a href="https://cra.org/cra-and-microsoft-announce-inaugural-cohort-of-cra-trustworthy-ai-research-fellows/" target="_blank" rel="noopener">
+          Dr. Akter received the Computing Research Association (CRA) Trustworthy AI Research Fellowship 2025<span class="visually-hidden"> (opens in new tab)</span></a></h3>
+        <img loading="lazy" src="images/CRA_group_pic.png" alt="CRA Trustworthy AI Research Fellows group photo">
+        <p><a href="https://cra.org/cra-and-microsoft-announce-inaugural-cohort-of-cra-trustworthy-ai-research-fellows/" target="_blank" rel="noopener">Read the CRA announcement about the fellowship and Dr. Akter's work<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
+      </div>
+    </div>
+
+    <!--      <div class="col-lg-4 col-md-6">
+            <div class="news-card">
+              <span class="date">June 18, 2025</span>
+              <h3><a href="https://dl.acm.org/doi/10.1145/3663547.3746332" target="_blank" rel="noopener">
+                Paper on accessibility of collaborative technologies is accepted, presented, and published at ASSETS 2025<span class="visually-hidden"> (opens in new tab)</span></a></h3>
+              <img loading="lazy" class="fit-contain" src="images/beyond_accessibility.png" alt="Title slide of the Beyond Accessibility paper">
+              <p>We have evaluated the accessibility of 30 widely used collaborative technologies.
+                <a href="https://dl.acm.org/doi/10.1145/3663547.3746332" target="_blank" rel="noopener">Read the paper: Beyond Accessibility (ASSETS 2025)<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
+            </div>
+          </div> -->
+
+    <div class="col-lg-4 col-md-6">
+      <div class="news-card">
+        <span class="date">May 1, 2025</span>
+        <h3>Abhinaya Guduru received the Distinguished Research Award at the 2025 UTSA Excellence in Sciences Awards</h3>
+        <img loading="lazy" src="images/abhinaya_award.jpg" alt="Abhinaya Guduru receiving the Distinguished Research Award">
+        <p>Undergraduate student Abhinaya Guduru presented a poster on financial abuse experienced by older
+          adults at the 2025 Undergraduate Research &amp; Creative Inquiry Showcase and received the
+          Distinguished Research Award.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- ================= FOOTER (same on every page) ================= -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner row g-4">
+    <div class="col-md-5 text-center">
+      <h3>Contact Information</h3>
+      <p><strong>Dr. Taslima Akter</strong><br>
+        Assistant Professor<br>
+        University of Texas at San Antonio<br>
+        Computer Science | College of AI, Cyber and Computing</p>
+      <p><a href="mailto:taslima.akter@utsa.edu">Email: taslima.akter@utsa.edu</a></p>
+    </div>
+    <div class="col-md-2 text-center">
+      <a href="index.html" aria-label="APEX Lab home">
+        <img loading="lazy" class="footer-logo" src="images/apexlab-logo.png"
+             alt="Accessibility and Privacy Enhancing EXperience (APEX) Lab logo">
       </a>
-    </h1>
-  </header>
-
-  <!-- ================= NAVBAR =================
-       To mark the current page, move class="active" to that link. -->
-  <nav class="site-nav" aria-label="Main navigation">
-    <div class="nav-inner">
-      <ul>
-        <li><a class="active" href="index.html" aria-current="page">Home</a></li>
-        <li><a href="people.html">People</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-      </ul>
     </div>
-  </nav>
-
-  <main id="main" class="page">
-
-    <!-- ================= PHOTO CAROUSEL =================
-         To add a slide: copy one <div class="carousel-item"> block.
-         Landscape photos (wider than tall) look best here. -->
-    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="6000">
-      <div class="carousel-inner">
-
-        <div class="carousel-item active">
-          <img src="images/apex_lab_team.jpg" alt="APEX Lab team group photo">
-          <div class="carousel-caption">
-            <h2>Welcome to the Accessibility and Privacy Enhancing EXperience (APEX) Lab</h2>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img loading="lazy" src="images/sp1_campus.jpg" alt="UTSA main building">
-          <div class="carousel-caption">
-            <h2>UT San Antonio Campus</h2>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img loading="lazy" src="images/apexlab_member-1.jpeg" alt="APEX Lab graduate students">
-          <div class="carousel-caption">
-            <h2>Graduate Students</h2>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img loading="lazy" src="images/apexlab_member_2.jpg" alt="APEX Lab graduate students">
-          <div class="carousel-caption">
-            <h2>Graduate Students</h2>
-          </div>
-        </div>
-
-        <div class="carousel-item">
-          <img loading="lazy" src="images/apexlab_member_3.jpg" alt="APEX Lab graduate students" style="object-position: top;">
-          <div class="carousel-caption">
-            <h2>Graduate Students</h2>
-          </div>
-        </div>
-
-      </div>
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous slide</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next slide</span>
-      </button>
+    <div class="col-md-5 text-center">
+      <h3>Address</h3>
+      <p><strong>APEX Lab</strong><br>
+        506 Dolorosa St<br>
+        San Antonio, Texas<br>
+        USA 78204</p>
+      <p><a href="https://maps.app.goo.gl/StTmXfGu2sQjGXqVA">Show map</a></p>
     </div>
+  </div>
+  <div class="footer-bottom">
+    © <span id="year"></span> Accessibility and Privacy Enhancing EXperience (APEX) Lab •
+    University of Texas at San Antonio (UT San Antonio)
+  </div>
+</footer>
 
-    <!-- ================= INTRO ================= -->
-    <p>
-      The <b>A</b>ccessibility and <b>P</b>rivacy Enhancing <b>EX</b>perience (<b>APEX</b>) Lab is led by
-      <b>Dr. Taslima Akter</b> in the College of AI, Cyber, and Computing at the
-      <b>University of Texas at San Antonio</b>.
-      Our research focuses on advancing privacy and accessibility for marginalized populations, with a
-      particular focus on people with disabilities. To learn more about our work, explore our recent
-      <a href="publications.html">publications</a>. Visit the <a href="people.html">People</a> page to meet
-      the team driving our research forward.
-    </p>
-
-    <!-- ================= RECENT NEWS =================
-         To add a news item: copy one <div class="col-lg-4"> block below.
-         Newest items go first. If the image is a screenshot or figure with
-         text on it, add class="fit-contain" to the <img> so it isn't cropped. -->
-    <div class="text-center">
-      <h2 class="section-title">Recent News</h2>
-    </div>
-
-    <div class="row g-4 align-items-stretch">
-
-      <div class="col-lg-4 col-md-6">
-        <div class="news-card">
-          <span class="date">May 19, 2026</span>
-          <h3>Paper accepted at SOUPS 2026</h3>
-          <img loading="lazy" src="images/soups-2026-paper-accepted-placeholder.jpg"
-               alt="Paper accepted graphic: SOUPS 2026">
-          <p>Sohana Akter and Dr.Taslima Akter's  paper <b>"I feel as though my privacy is being violated": Privacy Risks and Barriers in
-            Instant Messaging for Blind and Low-Vision Users</b> has been accepted to appear at the
-            Symposium On Usable Privacy and Security (<b>SOUPS 2026</b>) in Hannover, Germany.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="news-card">
-          <span class="date">March 2026</span>
-          <h3><a href="https://cra.org/crn/2026/03/cra-trustworthy-ai-research-fellow-spotlight-taslima-akter/" target="_blank" rel="noopener">
-            Dr. Akter featured in CRA Trustworthy AI Research Fellow Spotlight<span class="visually-hidden"> (opens in new tab)</span></a></h3>
-          <img loading="lazy" src="images/Headshot-Taslima-Akter-wide.jpg"
-               alt="Portrait of Dr. Taslima Akter">
-          <p>Dr. Akter was featured in CRA's Fellow Spotlight Series, discussing her research
-            on privacy and accessibility for blind and low-vision users and how to build
-            trustworthy and socially responsible AI.
-            <a href="https://cra.org/crn/2026/03/cra-trustworthy-ai-research-fellow-spotlight-taslima-akter/" target="_blank" rel="noopener">Read the full spotlight<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="news-card">
-          <span class="date">February 24, 2026</span>
-          <h3>Sohana Akter presented her research on privacy risk and barriers in instant messaging applications among blind and low vision people at NSF AI Spring School 2026.</h3>
-          <img loading="lazy" src="images/sohana_poster_matrix.jpeg" alt="Sohana presenting poster">
-          <p><a href="https://ai.utsa.edu/ai-spring-school-2026/" target="_blank" rel="noopener">Read the details of NSF AI Spring School 2026<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="news-card">
-          <span class="date">February 24, 2026</span>
-          <h3>Protik Dey and Mohd. Saifuzzaman presented their research on trustworthy GenAI use among blind and low vision people at NSF AI Spring School 2026.</h3>
-          <img loading="lazy" src="images/protik_saif_poster_matrix.jpg" alt="Protik and Saif presenting poster">
-          <p><a href="https://ai.utsa.edu/ai-spring-school-2026/" target="_blank" rel="noopener">Read the details of NSF AI Spring School 2026<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6">
-        <div class="news-card">
-          <span class="date">July 15, 2025</span>
-          <h3><a href="https://cra.org/cra-and-microsoft-announce-inaugural-cohort-of-cra-trustworthy-ai-research-fellows/" target="_blank" rel="noopener">
-            Dr. Akter received the Computing Research Association (CRA) Trustworthy AI Research Fellowship 2025<span class="visually-hidden"> (opens in new tab)</span></a></h3>
-          <img loading="lazy" src="images/CRA_group_pic.png" alt="CRA Trustworthy AI Research Fellows group photo">
-          <p><a href="https://cra.org/cra-and-microsoft-announce-inaugural-cohort-of-cra-trustworthy-ai-research-fellows/" target="_blank" rel="noopener">Read the CRA announcement about the fellowship and Dr. Akter's work<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
-        </div>
-      </div>
-
-<!--      <div class="col-lg-4 col-md-6">
-        <div class="news-card">
-          <span class="date">June 18, 2025</span>
-          <h3><a href="https://dl.acm.org/doi/10.1145/3663547.3746332" target="_blank" rel="noopener">
-            Paper on accessibility of collaborative technologies is accepted, presented, and published at ASSETS 2025<span class="visually-hidden"> (opens in new tab)</span></a></h3>
-          <img loading="lazy" class="fit-contain" src="images/beyond_accessibility.png" alt="Title slide of the Beyond Accessibility paper">
-          <p>We have evaluated the accessibility of 30 widely used collaborative technologies.
-            <a href="https://dl.acm.org/doi/10.1145/3663547.3746332" target="_blank" rel="noopener">Read the paper: Beyond Accessibility (ASSETS 2025)<span class="visually-hidden"> (opens in new tab)</span></a>.</p>
-        </div>
-      </div> -->
-
-      <div class="col-lg-4 col-md-6">
-        <div class="news-card">
-          <span class="date">May 1, 2025</span>
-          <h3>Abhinaya Guduru received the Distinguished Research Award at the 2025 UTSA Excellence in Sciences Awards</h3>
-          <img loading="lazy" src="images/abhinaya_award.jpg" alt="Abhinaya Guduru receiving the Distinguished Research Award">
-          <p>Undergraduate student Abhinaya Guduru presented a poster on financial abuse experienced by older
-            adults at the 2025 Undergraduate Research &amp; Creative Inquiry Showcase and received the
-            Distinguished Research Award.</p>
-        </div>
-      </div>
-
-    </div>
-  </main>
-
-  <!-- ================= FOOTER (same on every page) ================= -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="footer-inner row g-4">
-      <div class="col-md-5 text-center">
-        <h3>Contact Information</h3>
-        <p><strong>Dr. Taslima Akter</strong><br>
-          Assistant Professor<br>
-          University of Texas at San Antonio<br>
-          Computer Science | College of AI, Cyber and Computing</p>
-        <p><a href="mailto:taslima.akter@utsa.edu">Email: taslima.akter@utsa.edu</a></p>
-      </div>
-      <div class="col-md-2 text-center">
-        <a href="index.html" aria-label="APEX Lab home">
-          <img loading="lazy" class="footer-logo" src="images/apexlab-logo.png"
-               alt="Accessibility and Privacy Enhancing EXperience (APEX) Lab logo">
-        </a>
-      </div>
-      <div class="col-md-5 text-center">
-        <h3>Address</h3>
-        <p><strong>APEX Lab</strong><br>
-          506 Dolorosa St<br>
-          San Antonio, Texas<br>
-          USA 78204</p>
-        <p><a href="https://maps.app.goo.gl/StTmXfGu2sQjGXqVA">Show map</a></p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © <span id="year"></span> Accessibility and Privacy Enhancing EXperience (APEX) Lab •
-      University of Texas at San Antonio (UT San Antonio)
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
