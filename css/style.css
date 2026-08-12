@@ -83,7 +83,7 @@ hr { border-top: 1px solid #e4e9e9; opacity: 1; margin: calc(var(--space) * 2) 0
 
 .site-header {
   text-align: center;
-  padding: calc(var(--space) * 1.25) var(--page-padding) var(--space);
+  padding: var(--space) var(--page-padding);
 }
 .site-header h1 { margin: 0; }
 .site-header .banner {
@@ -159,7 +159,7 @@ hr { border-top: 1px solid #e4e9e9; opacity: 1; margin: calc(var(--space) * 2) 0
 
 .hero-carousel {
   max-width: 950px;
-  margin: calc(var(--space) * 2) auto;
+  margin: var(--space) auto calc(var(--space) * 2);
 }
 .hero-carousel .carousel-item img {
   width: 100%;
